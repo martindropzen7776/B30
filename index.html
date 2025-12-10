@@ -9,33 +9,33 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
   <meta name="theme-color" content="#071220"/>
 
-<!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '334039202718600');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=334039202718600&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
+  <!-- Meta Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '334039202718600');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=334039202718600&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-C784C7E582"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-C784C7E582"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
-  gtag('config', 'G-C784C7E582');
-</script>
+    gtag('config', 'G-C784C7E582');
+  </script>
   
   <style>
     :root{
@@ -85,7 +85,7 @@ src="https://www.facebook.com/tr?id=334039202718600&ev=PageView&noscript=1"
       letter-spacing:0.5px;
     }
 
-    /* FORMULARIO */
+    /* FORMULARIO (CAJA) */
     .form-box{
       background:rgba(255,255,255,0.05);
       padding:25px 20px;
@@ -93,20 +93,6 @@ src="https://www.facebook.com/tr?id=334039202718600&ev=PageView&noscript=1"
       box-shadow:0 8px 25px rgba(0,0,0,0.45);
       margin-bottom:20px;
       backdrop-filter:blur(6px);
-    }
-    .form-entry{ margin-bottom:18px; text-align:left; }
-    .form-entry label{
-      font-size:15px; font-weight:600; display:block; margin-bottom:6px;
-      color:var(--accent2);
-    }
-    .form-entry input{
-      width:100%; padding:12px 14px; border-radius:8px;
-      border:2px solid transparent; font-size:15px; color:#111; background:#fff;
-      outline:none; transition:all .3s;
-    }
-    .form-entry input:focus{
-      border-color:var(--accent);
-      box-shadow:0 0 0 3px rgba(0,185,255,0.25);
     }
 
     .cta-btn{
@@ -156,15 +142,9 @@ src="https://www.facebook.com/tr?id=334039202718600&ev=PageView&noscript=1"
     <h1>Envíanos un WhatsApp para crear tu cuenta</h1>
     <div class="verified">💎 PLATAFORMA VERIFICADA ✅</div>
 
-    <!-- FORMULARIO -->
+    <!-- SOLO BOTÓN -->
     <div class="form-box">
-      <form id="wppform">
-        <div class="form-entry">
-          <label for="user">Usuario Deseado<span>*</span>:</label>
-          <input type="text" id="user" name="user" placeholder="Ej: Juanperez" required>
-        </div>
-        <button type="submit" class="cta-btn">CREAR USUARIO ➤</button>
-      </form>
+      <button id="cta-btn" class="cta-btn">CREAR MI USUARIO ➤</button>
     </div>
 
     <!-- TEXTO INFERIOR -->
@@ -195,16 +175,13 @@ src="https://www.facebook.com/tr?id=334039202718600&ev=PageView&noscript=1"
         return choice;
       }
 
-      const form = document.getElementById("wppform");
-      form.addEventListener("submit", function(e){
-        e.preventDefault();
-        const user = document.getElementById("user").value.trim();
-        if(!user) return;
-
+      const btn = document.getElementById("cta-btn");
+      btn.addEventListener("click", function(){
         const number = pickNumber();
         const ref = "BT_" + Math.random().toString(36).substring(2,8).toUpperCase();
+        const user = "no_proporcionado";
 
-        const msg = `Hola, quiero mis 5k extra \nMi usuario deseado es: ${user}\nMi código promocional es: ${ref}`;
+        const msg = `Hola, quiero mis 5k extra \nMi código promocional es: ${ref}`;
         const url = `https://wa.me/${number}?text=${encodeURIComponent(msg)}&ref=${encodeURIComponent(ref)}`;
 
         // 🎯 TRACKING
